@@ -3,7 +3,10 @@ pandas
 scikit-learn
 openpyxl
 matplotlib
-.
 pyaml
 ensure
 python-box
+xgboost
+mlflow
+seaborn
+.

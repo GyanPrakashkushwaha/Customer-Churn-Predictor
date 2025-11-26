@@ -12,8 +12,6 @@ models:
     learning_rate: 0.1
   XGBoostClassifier:
     learning_rate: 0.1
-  CatBoostClassifier:
-    depth: 8
   AdaBoostClassifier:
     learning_rate: 0.01
   RandomForestClassifier:

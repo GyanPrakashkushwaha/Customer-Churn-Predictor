@@ -1,6 +1,9 @@
 from churnPredictor.constants import *
 from churnPredictor.utils import read_yaml, create_dirs
-from churnPredictor.entity import DataValidationConfig, DataTransformationConfig
+from churnPredictor.entity import (DataValidationConfig, 
+                                   DataTransformationConfig, 
+                                   ModelTrainerConfig, 
+                                   MLFlowTrackingConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -47,3 +50,37 @@ class ConfigurationManager:
         )
 
         return data_transformation_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.models  
+
+        create_dirs([config.model_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            train_data=config.train_data,
+            test_data=config.test_data,
+            model_dir=config.model_dir,
+            y_train_path=config.y_train_path,
+            y_test_path=config.y_test_path,
+            model_params_dir=params
+        )
+
+        return model_trainer_config
+    
+    def get_mlflow_tracking_config(self) -> MLFlowTrackingConfig:
+        config = self.config.mlflow_tracking
+
+        create_dirs([config.mlflow_dir])
+
+        mlflow_tracking_config = MLFlowTrackingConfig(
+            root_dir=config.mlflow_dir,
+            test_data=config.test_data,
+            model_dir=config.model_dir,  # Pointing to where models are saved
+            metrics_file=config.metrics_file ,
+            confusion_matrix_image=config.confusion_metrics,
+            y_test_path=config.y_test_path,
+            mlflow_uri= config.mlflow_uri
+        )
+
+        return mlflow_tracking_config
