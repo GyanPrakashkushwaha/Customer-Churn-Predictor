@@ -8,7 +8,7 @@ class PredictionPipeline:
     def __init__(self):
         
         self.preprocessor = joblib.load(Path('artifacts/preprocessor/preprocessorObj.joblib'))
-        self.model = joblib.load(Path(r'artifacts\model\XGBoostClassifier.joblib'))
+        self.model = joblib.load(Path('artifacts/model/XGBoostClassifier.joblib'))
 
     def predict(self, data: pd.DataFrame):
         
