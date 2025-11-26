@@ -1,0 +1,20 @@
+randomforest:
+  n_estimators: 256
+  min_samples_split: 10
+  min_samples_leaf: 2
+  max_features: 'sqrt'
+  max_depth: 40
+  criterion: 'entropy'
+  oob_score: True
+
+models:
+  GradientBoostingClassifier:
+    learning_rate: 0.1
+  XGBoostClassifier:
+    learning_rate: 0.1
+  CatBoostClassifier:
+    depth: 8
+  AdaBoostClassifier:
+    learning_rate: 0.01
+  RandomForestClassifier:
+    n_estimators: 256

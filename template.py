@@ -19,7 +19,6 @@ list_of_files = [
     "main.py",
     "params.yaml",
     "requirements.txt",
-    "setup.py",
     "experiments/trials.ipynb",
     "templates/index.html",
     'artifacts/data',
