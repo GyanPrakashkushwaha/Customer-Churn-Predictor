@@ -4,7 +4,7 @@ from churnPredictor.pipeline.prediction import PredictionPipeline
 
 st.set_page_config(page_title="Customer Churn Prediction", page_icon="📊", layout="wide")
 
-st.title('📊 Customer Churn Prediction - New one')
+st.title('📊 Customer Churn Prediction')
 st.markdown("Enter customer details below to predict if they are likely to churn.")
 
 # --- Input Form ---
