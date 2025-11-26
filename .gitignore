@@ -164,8 +164,9 @@ cython_debug/
 templates-for-book/
 
 # Ignore model
-artifacts/model/*
-
+artifacts/model/GradientBoostingClassifier.joblib
+artifacts/model/AdaBoostClassifier.joblib
+artifacts/model/RandomForestClassifier.joblib
 # ignore mlruns
 mlruns/*
 
