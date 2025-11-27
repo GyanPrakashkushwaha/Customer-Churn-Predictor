@@ -43,11 +43,8 @@ if submit_button:
         pipeline = PredictionPipeline()
         prediction = pipeline.predict(df)
         
-        result = prediction[0]
-        
-        # Display Result
         st.divider()
-        if result == 1:
+        if prediction[0] == 1:
             st.error("⚠️ Prediction: This customer is likely to **CHURN**.")
         else:
             st.success("✅ Prediction: This customer is likely to **STAY**.")

@@ -1,4 +1,5 @@
 
 ## problems faced
-- each time I have to build the complete project using setup.py
+- Each time I have to build the complete project using setup.py
+- It was very difficult to track different models and choose best out of those models, so I used mlflow for that to resolve the issue.
 - scikit-learn expects 1D array(with no columns), but the data frame gives (row, 1), I was pretty frustrated but evantually used y_train.values.ravel() to resolve that.
